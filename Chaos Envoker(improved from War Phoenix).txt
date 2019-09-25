@@ -558,19 +558,19 @@ function MagicRing(PART,CFRAME,VARIANT)
 		T.Parent = RING
 		local LIGHT = IT("PointLight",RING)
 		if VARIANT == "Pheonix" then
-			BOTTOMTEXTURE.Texture = "http://www.roblox.com/asset/?id=1685019534"
-			TOPTEXTURE.Texture = "http://www.roblox.com/asset/?id=1685019534"
+			BOTTOMTEXTURE.Texture = "http://www.roblox.com/asset/?id=226252100"
+			TOPTEXTURE.Texture = "http://www.roblox.com/asset/?id=2519645012"
 			T.Color = ColorSequence.new(PHEONIXCOLOR)
 			CreateSound(462809305,RING,5,1,false)
 		elseif VARIANT == "Sun" then
-			BOTTOMTEXTURE.Texture = "http://www.roblox.com/asset/?id=2519645016"
-			TOPTEXTURE.Texture = "http://www.roblox.com/asset/?id=2519645016"
+			BOTTOMTEXTURE.Texture = "http://www.roblox.com/asset/?id=29793456"
+			TOPTEXTURE.Texture = "http://www.roblox.com/asset/?id=29793456"
 			T.Color = ColorSequence.new(BRICKC"Bright Cyan".Color)
 			CreateSound(462809305,RING,5,1,false)
 			LIGHT.Color = BRICKC"Cyan".Color
 		elseif VARIANT == "Fire" then
-			BOTTOMTEXTURE.Texture = "http://www.roblox.com/asset/?id=3028949721"
-			TOPTEXTURE.Texture = "http://www.roblox.com/asset/?id=3028949721"
+			BOTTOMTEXTURE.Texture = "http://www.roblox.com/asset/?id=226252100"
+			TOPTEXTURE.Texture = "http://www.roblox.com/asset/?id=226252100"
 			T.Color = ColorSequence.new(BRICKC"Cyan".Color)
 			CreateSound(343211019,RING,5,1,false)
 			LIGHT.Color = C3(1,85/255,0)
