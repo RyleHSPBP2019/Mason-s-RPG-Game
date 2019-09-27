@@ -1,0 +1,44 @@
+ 
+
+local tweenService = game:GetService("TweenService")
+local rightdoor = script.Parent.Rightdoor.PrimaryPart
+local rightdoor2 = script.Parent.Rightdoor.Gatestand
+local leftdoor = script.Parent.Leftdoor.PrimaryPart
+local leftdoor2 = script.Parent.Leftdoor.Gatestand
+local debounce = true
+
+local Tweeninfo = TweenInfo.new(6,Enum.EasingStyle.Linear,Enum.EasingDirection.Out)
+
+local openright = {Position = Vector3.new(126.397, 2149.277, -340.021)}
+local closeright = {Position = Vector3.new(104.63, 2149.277, -343.212)}
+local openleft = {Position = Vector3.new(81.049, 2149.277, -346.768)}
+local closeleft = {Position = Vector3.new(101.828, 2149.277, -343.723)}
+
+local openleft2 = {Position = Vector3.new(56.562, 2149.532, -347.61)}
+local closeright2 = {Position = Vector3.new(128.649, 2149.532, -339.97)}
+local openright2 = {Position = Vector3.new(151.153, 2149.532, -339.97)}
+local closeleft2 = {Position = Vector3.new(77.332,2149.532, -347.61)}
+
+
+function toggleDoor()
+	if debounce then
+		debounce = false
+		tweenService:Create(rightdoor,Tweeninfo,openright):Play()
+		tweenService:Create(leftdoor,Tweeninfo,openleft):Play()
+		tweenService:Create(rightdoor2,Tweeninfo,openright2):Play()
+		tweenService:Create(leftdoor2,Tweeninfo,openleft2):Play()
+		wait(16)
+		tweenService:Create(rightdoor,Tweeninfo,closeright):Play()
+		tweenService:Create(leftdoor,Tweeninfo,closeleft):Play()
+		tweenService:Create(rightdoor2,Tweeninfo,closeright2):Play()
+		tweenService:Create(leftdoor2,Tweeninfo,closeleft2):Play()
+		wait(6)
+		debounce = true
+	end
+end
+
+script.Parent.touchbrick.Touched:Connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") then
+		toggleDoor()
+	end
+end)
