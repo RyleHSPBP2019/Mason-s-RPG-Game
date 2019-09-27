@@ -1,0 +1,112 @@
+
+local TweenService = game:GetService("TweenService")
+
+local door1 = script.Parent.Sytherius.DarkenedCloakOfMisfortune
+local door2 = script.Parent.Sytherius.LeftArm
+local door3 = script.Parent.Sytherius.RightArm
+local door4 = script.Parent.Sytherius.Mask
+local door5 = script.Parent.Sytherius.Torso
+--local door6 = script.Parent.Sytherius.Eye1
+--local door7 = script.Parent.Sytherius.Eye2
+
+
+local detec = script.Parent.MyPartlol.ClickDetector
+
+local tweeningInformation = TweenInfo.new(.1,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,0,false,0)
+--local tweeningInformation2 = TweenInfo.new(3,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,0,false,0)
+
+local door1Open = {Position = Vector3.new(158.854, 2133.482, -734.261)}
+local door2Open = {Position = Vector3.new(191.814, 2121.399, -723.835)}
+local door3Open = {Position = Vector3.new(125.99, 2123.425, -734.785)}
+local door4Open = {Position = Vector3.new(159.603, 2148.907, -732.475)}
+local door5Open = {Position = Vector3.new(158.984, 2115.664, -734.501)}
+--local door6Open = {Position = Vector3.new(999.65, 2236.618, -1043.563)}
+--local door7Open = {Position = Vector3.new(974.442, 2236.721, -1048.123)}
+      
+
+
+
+local tween1open = TweenService:Create(door1,tweeningInformation,door1Open)
+local tween2open = TweenService:Create(door2,tweeningInformation,door2Open)
+local tween3open = TweenService:Create(door3,tweeningInformation,door3Open)
+local tween4open = TweenService:Create(door4,tweeningInformation,door4Open)
+local tween5open = TweenService:Create(door5,tweeningInformation,door5Open)
+--local tween6open = TweenService:Create(door6,tweeningInformation,door6Open)
+--local tween7open = TweenService:Create(door7,tweeningInformation,door7Open)
+
+
+--local door1Open2 = {Position = Vector3.new(976.391, 2227.168, -1009.317)}
+--local door2Open2 = {Position = Vector3.new(1004.905, 2171.583, -981.403)}
+--local door3Open2 = {Position = Vector3.new(941.914, 2174.24, -984.353)}
+--local door4Open2 = {Position = Vector3.new(979, 2255.498, -1032.791)}
+--local door5Open2 = {Position = Vector3.new(983.075, 2230.571, -1044.163)}
+--local door6Open2 = {Position = Vector3.new(989.836, 2231.399, -1012.4)}
+--local door7Open2 = {Position = Vector3.new(964.628, 2231.375, -1016.962)}
+
+---local tween1open2 = TweenService:Create(door1,tweeningInformation,door1Open2)
+--local tween2open2 = TweenService:Create(door2,tweeningInformation,door2Open2)
+--local tween3open2 = TweenService:Create(door3,tweeningInformation,door3Open2)
+--local tween4open2 = TweenService:Create(door4,tweeningInformation,door4Open2)
+--local tween5open2 = TweenService:Create(door5,tweeningInformation,door5Open2)
+--local tween6open2 = TweenService:Create(door6,tweeningInformation,door6Open2)
+--local tween7open2 = TweenService:Create(door7,tweeningInformation,door7Open2)
+
+
+
+if detec then
+	detec.MouseClick:Connect(function()
+			script.Parent.MyPartlol.ClickDetector.talk1: Play()
+		
+			
+			wait(15.5)
+			tween1open:Play()
+			tween2open:Play()
+			tween3open:Play()
+			tween4open:Play()
+			tween5open:Play()
+			
+			script.Parent.MyPartlol.ClickDetector.summon: Play()
+			script.Parent.MyPartlol.ClickDetector.OST: Play()
+			script.Parent.MyPartlol.ClickDetector.liftoff: Play()
+			script.Parent.MyPartlol.ClickDetector.boom: Play()
+			script.Parent.MyPartlol.ClickDetector.OST: Play()
+
+			wait(3)
+			
+			
+			--tween6open:Play()
+			--tween7open:Play()
+			
+			wait(8)
+			--tween1open2:Play()
+			--tween2open2:Play()
+			--tween3open2:Play()
+			--tween4open2:Play()
+			--tween5open2:Play()
+			--tween6open2:Play()
+			--tween7open2:Play()
+			--wait(3)
+			
+	
+	
+
+			--workspace.Sytheriuskeeperofknowledge.Sytherius.MyPartlol.ClickDetector.summon: Play()
+			--workspace.Krynix.CuratorofChaos.MyPart.ClickDetector.Audio: Stop()
+
+			-- continue the functions
+	end)
+end
+	
+		
+
+
+	
+	
+	
+
+
+--i added this bc i need the audio to play
+
+	
+
+
