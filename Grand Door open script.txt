@@ -1,0 +1,62 @@
+--AveryTheChaosChild
+
+--Need to chang the doors orientation???
+
+--Tween service doesnt allow that.
+
+local TweenService = game:GetService("TweenService")
+local door1 = script.Parent:WaitForChild("lid1")
+local door2 = script.Parent:WaitForChild("lid2")
+local door3 = script.Parent:WaitForChild("Decobeam")
+local detec = script.Parent.buttonforgrand.ClickDetector
+local doorIsOpen = false
+local isMoving = false
+
+local tweeningInformation = TweenInfo.new(20,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,0,false,0)
+
+local door1Open = {Position = Vector3.new(160.487, 3312.008, -891.726)}            --these are the positions i need the big door to move to
+local door2Open = {Position = Vector3.new(160.51, 3312.009, -891.942)}
+local door3Open = {Position = Vector3.new(159.831, 3311.947, -891.319)}
+
+local door1Close = {Position = Vector3.new(-3.907, 3326.274, 372.381)}		-- This is the return position when closing
+local door2Close = {Position = Vector3.new(-3.883, 3326.274, 372.165)}
+local door3Close = {Position = Vector3.new(-4.562, 3326.213, 372.788)}
+
+local tween1open = TweenService:Create(door1,tweeningInformation,door1Open)
+local tween1close = TweenService:Create(door1,tweeningInformation,door1Close)
+
+local tween2open = TweenService:Create(door2,tweeningInformation,door2Open)
+local tween2close = TweenService:Create(door2,tweeningInformation,door2Close)
+
+local tween3open = TweenService:Create(door3,tweeningInformation,door3Open)
+local tween3close = TweenService:Create(door3,tweeningInformation,door3Close)
+
+
+
+if detec then
+	detec.MouseClick:Connect(function()
+		if not doorIsOpen and not isMoving then
+			isMoving= true
+			doorIsOpen = true
+			tween1open:Play()
+			tween2open:Play()
+			tween3open:Play()
+			print 'opening'
+			wait(10)
+			isMoving = false
+		elseif doorIsOpen and not isMoving then
+			doorIsOpen = false
+			isMoving = true
+			tween1close:Play()
+			tween2close:Play()
+			tween3close:Play()
+			wait(10)
+			isMoving = false
+		end
+	end)
+end
+
+
+
+
+
