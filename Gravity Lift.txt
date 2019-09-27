@@ -1,0 +1,35 @@
+debounce=true
+
+script.Parent.Touched:Connect(function(hit)
+	if debounce == true then
+	debounce = false
+   	 		if hit.Parent:FindFirstChild('Humanoid') then
+
+		
+		
+
+			workspace.spirelift.Sound: play()
+	
+			wait(2)
+
+        	local bodyVelocity = Instance.new('BodyVelocity')
+        	bodyVelocity.Velocity = Vector3.new(0,100,0)
+        	bodyVelocity.Parent = hit.Parent.HumanoidRootPart
+
+			wait(3.8) -- destroy
+			bodyVelocity:Destroy()
+
+			
+
+ 			local bodyVelocity = Instance.new('BodyVelocity')
+       	 	bodyVelocity.Velocity = Vector3.new(0,0,-50)
+        	bodyVelocity.Parent = hit.Parent.HumanoidRootPart
+
+			wait(1.5) -- destroy
+			bodyVelocity:Destroy()
+
+		debounce=true
+
+		end
+    end
+end)
